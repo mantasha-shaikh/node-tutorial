@@ -4,13 +4,12 @@
   "main": "1-intro.js",
   "scripts": {
     "start": "nodemon app.js"
- 
-  
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "express": "^5.1.0",
     "lodash": "^4.17.21",
     "nodemon": "^3.1.10"
   }
