@@ -1,29 +1,32 @@
-const express = require('express');
-const app = express();
 
-app.get('/', (req, res) => {
-   console.log('user hit resource');
-   
-   res.status(200).send("home page");
-});
+ 
+ const readline =require("readline").createInterface({
+   input :process.stdin,
+   output:process.stdout
+ });
 
-app.get('/about', (req, res) => {
-   res.status(200).send("about page");
-});
+readline.question("enter your marks  :",(input)=>{
 
-app.all('*', (req, res) => {
-   res.status(404).send("resource not found");
-});
-
-app.listen(5000, () => {
-   console.log("server is listening on port 5000");
-});
+const marks = Number(input);
 
 
-//app.get
-//app.post
-//app.put
-//app.delete
-//app.pull
-//app.use
-//app.listen
+ if(marks >= 90){
+console.log("Grade A " , marks);
+
+ }else if(marks >= 70){
+    console.log("Grade B ");
+ }
+ else if(marks >= 50){
+    console.log("Grade C ");
+ }
+ else if(marks >= 35){
+    console.log("Grade D");
+ }else{
+     console.log("keep trying hard");
+
+   }
+
+
+readline.close();
+
+  });
