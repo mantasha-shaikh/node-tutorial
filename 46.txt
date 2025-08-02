@@ -1,0 +1,15 @@
+🔹 Our Own:
+function logger(req, res, next) {
+  console.log(req.method, req.url);
+  next();
+}
+app.use(logger);
+
+🔹 Express Middleware:
+app.use(express.json());      // parse JSON body
+app.use(express.static('public'));  // serve static files
+
+
+🔹 Third-party Middleware:
+const morgan = require('morgan');
+app.use(morgan('tiny'));     // logging HTTP requests

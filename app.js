@@ -1,32 +1,32 @@
+const express = require("express")
+const app = express();
+const logger = require('./42_looger')
+const authorize = require('./45_authroize')
 
- 
- const readline =require("readline").createInterface({
-   input :process.stdin,
-   output:process.stdout
- });
-
-readline.question("enter your marks  :",(input)=>{
-
-const marks = Number(input);
+app.use([logger,authorize])//jo first in forst shoe
 
 
- if(marks >= 90){
-console.log("Grade A " , marks);
+//req => middware => res
 
- }else if(marks >= 70){
-    console.log("Grade B ");
- }
- else if(marks >= 50){
-    console.log("Grade C ");
- }
- else if(marks >= 35){
-    console.log("Grade D");
- }else{
-     console.log("keep trying hard");
+//1.use vs route
+//2.option- our own/express/thirsd party
 
-   }
+app.get('/',(req,res)=>{
+   res.send('hey dear')
+})
 
+app.get('/api/products',(req,res)=>{
+   res.send('products')
+})
 
-readline.close();
+app.get('/api/items',(req,res)=>{
+   console.log(req.user);
+   // { nam: 'john', id: 3 }
+   
+   res.send('items')
+})
 
-  });
+app.listen(5000,()=>{
+   console.log('listning here ');
+   
+})
