@@ -1,32 +1,19 @@
-const express = require("express")
+const express = require("express");
 const app = express();
-const logger = require('./42_looger')
-const authorize = require('./45_authroize')
+// const peopleRouter = require("./routh/people");
+const peopleRouter = require("./routh/more_cleanP");
+ const auth = require("./routh/auth");
 
-app.use([logger,authorize])//jo first in forst shoe
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use(express.static("../Nodejs/method_public"));
+
+app.use("/api/people", peopleRouter);
+app.use("/login", auth);
 
 
-//req => middware => res
-
-//1.use vs route
-//2.option- our own/express/thirsd party
-
-app.get('/',(req,res)=>{
-   res.send('hey dear')
-})
-
-app.get('/api/products',(req,res)=>{
-   res.send('products')
-})
-
-app.get('/api/items',(req,res)=>{
-   console.log(req.user);
-   // { nam: 'john', id: 3 }
-   
-   res.send('items')
-})
-
-app.listen(5000,()=>{
-   console.log('listning here ');
-   
-})
+app.listen(5000, () => {
+  console.log("hello listening");
+});

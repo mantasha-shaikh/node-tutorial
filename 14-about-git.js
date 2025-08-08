@@ -12,7 +12,11 @@
 // R	Renamed
 // C	Copied
 
+// git branch
 
+// * main
+//   dev
+//   feature-login
 
 
 
@@ -67,3 +71,34 @@
 // M	File edit, abhi git add . nahi
 // D	File delete, fir git add .
 // R	File rename, fir git add .
+
+
+// <!-- 
+// 🎯 HOW TO CONTRIBUTE VIA PULL REQUEST (PR)
+
+// Step 1: Fork the original repository from GitHub.
+
+// Step 2: Clone your forked repo:
+//   git clone https://github.com/<your-username>/<repo-name>.git
+//   cd <repo-name>
+
+// Step 3: Create a new branch for your feature/fix:
+//   git checkout -b my-feature-branch
+
+// Step 4: Make your code changes.
+//   git add .
+//   git commit -m "Added: My feature or fix"
+
+// Step 5: Push your changes to your fork:
+//   git push origin my-feature-branch
+
+// Step 6: Go to GitHub and click "Compare & Pull Request" button.
+//   - Add title and description.
+//   - Click "Create Pull Request"
+
+// ✅ Now wait for the maintainer to review or merge your code!
+
+// Bonus:
+//   Check remote link: git remote -v
+
+//  -->
